@@ -2,23 +2,15 @@ package com.example.airbnb.application;
 
 public class Main {
 
-    private static String dbName = "airbnbDB";
+    public static String connectionUrl = "jdbc:sqlserver://uranium.cs.umanitoba.ca;"
+            + "database=Airbnb;"
+            + "user=colomagz@uranium.cs.umanitoba.ca;"
+            + "password=7917361;"
+            + "encrypt=true;"
+            + "trustServerCertificate=false;"
+            + "loginTimeout=30;";
 
-    public static void setDBPathName(final String name) {
-        try {
-            Class.forName("org.hsqldb.jdbcDriver").newInstance();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        dbName = name;
+    public static String getConnectionUrl(){
+        return connectionUrl;
     }
-
-    public static String getDBPathName() {
-        return dbName;
-    }
-
 }

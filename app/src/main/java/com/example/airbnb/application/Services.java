@@ -7,8 +7,8 @@ public class Services {
     public static AirbnbDB airbnb = null;
 
     public static synchronized AirbnbDB getAirbnbDB(){
-        if (airbnb == null) {
-            airbnb = new AirbnbDB(Main.getDBPathName());
+        if (airbnb == null){
+            airbnb = new AirbnbDB(Main.getConnectionUrl());
         }
         return airbnb;
     }

@@ -2,18 +2,22 @@ package com.example.airbnb.persistence;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class AirbnbDB {
 
     //initialize db path in the constructor
-    private String dbPath;
+    private String connectionUrl;
 
-    public AirbnbDB(final String dbPath){
-        this.dbPath = dbPath;
+    public AirbnbDB(final String url) {
+        connectionUrl = url;
     }
 
-    private Connection connection() throws SQLException {
-        return DriverManager.getConnection("jdbc:hsqldb:file:" + dbPath + ";shutdown=true", "SA", "");
+    private String fromResultSet(final ResultSet rs){
+
+        return "";
     }
+
+
 }
